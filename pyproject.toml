@@ -22,3 +22,26 @@ build-backend = "poetry.core.masonry.api"
 dev = [
     "pytest (>=9.0.2,<10.0.0)"
 ]
+lint = [
+    "black (>=26.3.1,<27.0.0)",
+    "flake8 (>=7.3.0,<8.0.0)",
+    "mypy (>=1.20.1,<2.0.0)",
+    "isort (>=8.0.1,<9.0.0)"
+]
+[tool.black]
+line-length = 119
+exclude = '''
+(
+  /(
+      \.eggs         # Исключить несколько общих каталогов
+    | \.git          # в корне проекта
+    | \.venv
+  )/
+)
+'''
+
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_return_any = true
+exclude = 'venv'
