@@ -15,12 +15,12 @@ file_formater = logging.Formatter("%(asctime)s %(filename)s %(funcName)s %(level
 file_handler.setFormatter(file_formater)
 app_logger.addHandler(file_handler)
 app_logger.setLevel(logging.INFO)
-stream_handler = logging.StreamHandler()
-stream_handler.setFormatter(file_formater)
-app_logger.addHandler(stream_handler)
+# stream_handler = logging.StreamHandler()
+# stream_handler.setFormatter(file_formater)
+# app_logger.addHandler(stream_handler)
 
 
-def date_determination(data_user=None):
+def date_determination(data_user):
     """функция, которая принимает строку с датой и временем и возвращает приветствие,
     если ничего не получает на вход то использует настоящую дату и время"""
     try:
@@ -36,20 +36,8 @@ def date_determination(data_user=None):
                 return "добрый вечер"
             else:
                 return "доброй ночи"
-
         else:
-            app_logger.info("дата введена автоматически")
-            current_date_time = datetime.datetime.now()
-            hour = current_date_time.hour
-            if hour < 12:
-                return "доброе утро"
-            elif 13 <= hour < 18:
-                return "добрый день"
-            elif 18 <= hour < 21:
-                return "добрый вечер"
-            else:
-                return "доброй ночи"
-
+            app_logger.info("дата не введена пользователем")
     except ValueError:
         app_logger.warning("дата введена некорректно")
         print("""Ошибка. Неверный формат ввода. Введите строку с датой и временем в формате

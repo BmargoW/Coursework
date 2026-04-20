@@ -1,13 +1,19 @@
 import json
-
+import datetime
 from src.utils import cost_shares, currency_convert, date_determination, max_sum, my_list
 
 
-def views(users_data):
+def views(users_data=None):
+
+    if users_data:
+        u_data = users_data
+    else:
+        now_data = datetime.datetime.now()
+        u_data = now_data.strftime("%Y-%m-%d %H:%M:%S")
     try:
-        one = date_determination(users_data)
-        two = my_list(users_data)
-        three = max_sum(users_data)
+        one = date_determination(u_data)
+        two = my_list(u_data)
+        three = max_sum(u_data)
         four = currency_convert(["USD", "EUR"])
         five = cost_shares(["AAPL"])
         data = {
