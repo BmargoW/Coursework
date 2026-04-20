@@ -1,6 +1,8 @@
-import json
 import datetime
-from src.utils import cost_shares, currency_convert, date_determination, max_sum, my_list
+import json
+
+from src.utils import (cost_shares, currency_convert, date_determination,
+                       max_sum, my_list)
 
 
 def views(users_data=None):
