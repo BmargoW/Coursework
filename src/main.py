@@ -5,7 +5,7 @@ from src.services import line_selection
 from src.views import views
 
 
-def main():
+def main():  # pragma: no cover
 
     print("""Программа: Привет! Добро пожаловать в программу работы
 с банковскими транзакциями.""")
@@ -26,15 +26,13 @@ def main():
     print(result_2)
 
     df = pd.read_excel("../data/operations.xlsx")
-    user_category = input(
-        """Чтобы узнать траты интересующей Вас категории за последние три месяца введите название "
-        интересущей Вас категории"""
-    )
+    user_category = input("""Чтобы узнать траты интересующей Вас категории за последние три месяца введите название "
+        интересущей Вас категории""")
     user_date = str(input("введите дату в формате ДД.ММ.ГГГГ"))
     result_3 = spending_by_category(df, user_category, user_date)
 
     print(result_3)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()

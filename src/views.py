@@ -1,11 +1,10 @@
 import datetime
 import json
 
-from src.utils import (cost_shares, currency_convert, date_determination,
-                       max_sum, my_list)
+from src.utils import cost_shares, currency_convert, date_determination, max_sum, my_list
 
 
-def views(users_data=None):
+def views(users_data=None):  # pragma: no cover
 
     if users_data:
         u_data = users_data
@@ -34,7 +33,7 @@ def views(users_data=None):
               'YYYY-MM-DD HH:MM:SS'""")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     users_input = input("""Введите строку с датой и временем в формате
               "YYYY-MM-DD HH:MM:SS" """)
     print(views(users_input))

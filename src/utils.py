@@ -151,9 +151,5 @@ def uploading_content(name_file):
             return []
 
 
-if __name__ == "__main__":
-    data_str = input(str("введите дату в формате YYYY-MM-DD HH:MM:SS"))
-    print(max_sum(data_str))
-
 # ValueError: time data ' 2022-04-23 23:15:00' does not match format '%Y-%m-%d %H:%M:%S'
 # "25.12.2021 22:21:49" 2021-12-25 22:21:49
